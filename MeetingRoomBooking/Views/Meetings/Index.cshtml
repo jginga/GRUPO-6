@@ -1,0 +1,9 @@
+﻿@model IEnumerable<Meeting>
+
+<h2>Meetings</h2>
+<ul>
+    @foreach (var meeting in Model)
+    {
+        <li>@meeting.Subject (@meeting.StartTime - @meeting.EndTime) at @meeting.Room.Name</li>
+    }
+</ul>
