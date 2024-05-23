@@ -1,18 +1,23 @@
-﻿namespace MeetingRoomBooking.Data
-{
-    using MeetingRoomBooking.Models;
-    using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
+using MeetingRoomBooking.Models;
 
-    public class ApplicationDbContext : DbContext
+namespace MeetingRoomBooking.Data
+{
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<MeetingRoom> MeetingRooms { get; set; }
+        public DbSet<Reservation> Reservations { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }
 
-        public DbSet<Room> Rooms { get; set; }
-        public DbSet<Meeting> Meetings { get; set; }
-        public DbSet<User> Users { get; set; }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            // Adicione configurações adicionais de modelagem aqui
+        }
     }
-
 }

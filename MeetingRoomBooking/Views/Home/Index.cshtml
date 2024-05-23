@@ -1,8 +1,12 @@
 ﻿@{
+    Layout = "_Layout";
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Welcome to the Meeting Room Booking Application</h2>
+<p>This is the home page. Use the buttons below to log in or register.</p>
+
+<p>
+    <a class="btn btn-primary" asp-controller="Account" asp-action="Login">Login</a>
+    <a class="btn btn-secondary ml-2" asp-controller="Account" asp-action="Register">Register</a>
+</p>

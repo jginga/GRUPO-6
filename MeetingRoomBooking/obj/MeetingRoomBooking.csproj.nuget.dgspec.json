@@ -1,32 +1,37 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Rúben\\OneDrive\\Ambiente de Trabalho\\UAB\\2º Semestre - 2023 - 2024\\labds  - 21179\\equipa_6\\MeetingRoomBooking\\MeetingRoomBooking.csproj": {}
+    "C:\\Users\\Rúben\\OneDrive\\Ambiente de Trabalho\\UAB\\2º Semestre - 2023 - 2024\\labds  - 21179\\equipa_6\\GRUPO-6\\MeetingRoomBooking\\MeetingRoomBooking.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Rúben\\OneDrive\\Ambiente de Trabalho\\UAB\\2º Semestre - 2023 - 2024\\labds  - 21179\\equipa_6\\MeetingRoomBooking\\MeetingRoomBooking.csproj": {
+    "C:\\Users\\Rúben\\OneDrive\\Ambiente de Trabalho\\UAB\\2º Semestre - 2023 - 2024\\labds  - 21179\\equipa_6\\GRUPO-6\\MeetingRoomBooking\\MeetingRoomBooking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Rúben\\OneDrive\\Ambiente de Trabalho\\UAB\\2º Semestre - 2023 - 2024\\labds  - 21179\\equipa_6\\MeetingRoomBooking\\MeetingRoomBooking.csproj",
+        "projectUniqueName": "C:\\Users\\Rúben\\OneDrive\\Ambiente de Trabalho\\UAB\\2º Semestre - 2023 - 2024\\labds  - 21179\\equipa_6\\GRUPO-6\\MeetingRoomBooking\\MeetingRoomBooking.csproj",
         "projectName": "MeetingRoomBooking",
-        "projectPath": "C:\\Users\\Rúben\\OneDrive\\Ambiente de Trabalho\\UAB\\2º Semestre - 2023 - 2024\\labds  - 21179\\equipa_6\\MeetingRoomBooking\\MeetingRoomBooking.csproj",
+        "projectPath": "C:\\Users\\Rúben\\OneDrive\\Ambiente de Trabalho\\UAB\\2º Semestre - 2023 - 2024\\labds  - 21179\\equipa_6\\GRUPO-6\\MeetingRoomBooking\\MeetingRoomBooking.csproj",
         "packagesPath": "C:\\Users\\Rúben\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Rúben\\OneDrive\\Ambiente de Trabalho\\UAB\\2º Semestre - 2023 - 2024\\labds  - 21179\\equipa_6\\MeetingRoomBooking\\obj\\",
+        "outputPath": "C:\\Users\\Rúben\\OneDrive\\Ambiente de Trabalho\\UAB\\2º Semestre - 2023 - 2024\\labds  - 21179\\equipa_6\\GRUPO-6\\MeetingRoomBooking\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "D:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
           "C:\\Users\\Rúben\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net8.0"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net8.0": {
-            "targetAlias": "net8.0",
+          "net5.0": {
+            "targetAlias": "net5.0",
             "projectReferences": {}
           }
         },
@@ -34,26 +39,25 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
-        "net8.0": {
-          "targetAlias": "net8.0",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "dependencies": {
-            "Microsoft.EntityFrameworkCore.SqlServer": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[5.0.17, )"
             },
-            "Microsoft.EntityFrameworkCore.Tools": {
+            "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.4, )"
+              "version": "[5.0.17, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[5.0.17, )"
             }
           },
           "imports": [
@@ -75,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
         }
       }
     }
