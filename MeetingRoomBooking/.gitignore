@@ -1,3 +1,56 @@
-﻿/.vscode
-/.vs
-/.idea
+﻿# Build Folders (do not include in source control)
+bin/
+obj/
+
+# User-specific files
+.vscode/
+.vscode/*
+.vscode-test/
+.idea/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Auto-generated files
+*.log
+*.lock.json
+*.sqlite
+*.mdf
+*.ldf
+*.generated.cs
+
+# DotNet SDK and related files
+.project/
+.project.lock.json
+.project.fragment.lock.json
+artifacts/
+*.dll
+*.exe
+*.obj
+*.nuspec
+*.nupkg
+*.psmdcp
+*.snupkg
+
+# OS generated files
+.DS_Store
+*.swp
+*~
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Rider
+.idea/
+
+# Local History for JetBrains IDEs
+.localhistory/
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# dotnet CLI
+.dotnet/
+tools/
