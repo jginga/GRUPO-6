@@ -1,0 +1,23 @@
+@model IEnumerable<MeetingRoomBooking.Models.Reservation>
+
+<h2>Reservations</h2>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Date</th>
+        <th>Reserved By</th>
+        <th>Meeting Room</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var reservation in Model)
+    {
+    <tr>
+        <td>@reservation.Date</td>
+        <td>@reservation.ReservedBy</td>
+        <td>@reservation.MeetingRoom.Name</td>
+    </tr>
+    }
+    </tbody>
+</table>
