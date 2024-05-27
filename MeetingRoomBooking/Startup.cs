@@ -6,65 +6,55 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using MeetingRoomBooking.Data;
 using MeetingRoomBooking.Models;
-using MeetingRoomBooking.Services;
 using Microsoft.AspNetCore.Identity;
 
-namespace MeetingRoomBooking
+public class Startup
 {
-    public class Startup
+    public IConfiguration Configuration { get; }
+
+    public Startup(IConfiguration configuration)
     {
-        public IConfiguration Configuration { get; }
+        Configuration = configuration;
+    }
 
-        public Startup(IConfiguration configuration)
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(
+                Configuration.GetConnectionString("DefaultConnection")));
+
+        services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            .AddEntityFrameworkStores<ApplicationDbContext>();
+
+        services.AddControllersWithViews();
+        services.AddRazorPages();
+    }
+
+    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+    {
+        if (env.IsDevelopment())
         {
-            Configuration = configuration;
+            app.UseDeveloperExceptionPage();
+            //app.UseDatabaseErrorPage();
+        }
+        else
+        {
+            app.UseExceptionHandler("/Home/Error");
+            app.UseHsts();
         }
 
-        public void ConfigureServices(IServiceCollection services)
+        app.UseHttpsRedirection();
+        app.UseStaticFiles();
+        app.UseRouting();
+        app.UseAuthentication();
+        app.UseAuthorization();
+
+        app.UseEndpoints(endpoints =>
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddIdentity<ApplicationUser, IdentityRole>()
-                .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
-
-            services.AddControllersWithViews();
-            services.AddScoped<MeetingRoomService>();
-
-            services.ConfigureApplicationCookie(options =>
-            {
-                options.LoginPath = "/Account/Login";
-                options.AccessDeniedPath = "/Account/AccessDenied";
-            });
-        }
-
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            else
-            {
-                app.UseExceptionHandler("/Home/Error");
-                app.UseHsts();
-            }
-
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
-            app.UseRouting();
-
-            app.UseAuthentication();
-            app.UseAuthorization();
-
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-            });
-        }
+            endpoints.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+            endpoints.MapRazorPages();
+        });
     }
 }
